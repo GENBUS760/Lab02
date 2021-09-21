@@ -6,7 +6,7 @@ import argparse # to parse command-line arguments
 import time
 
 if __name__ == "__main__":
-    url_1 = "https://api.github.com/emaadmanzoor"
+    url_1 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_1)
     print(r.status_code)
     print(r.json())
