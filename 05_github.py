@@ -8,9 +8,20 @@ import time
 if __name__ == "__main__":
     url_1 = "https://api.github.com/emaadmanzoor"
     r = requests.get(url_1)
-    print(r.status_code)
-    print(r.json())
+   
+    i=1
     
+    while i<=5:
+    
+      if r.status_code == "200":
+        print(r.status_code)
+        print(r.json())
+        break
+        
+        
+      i = i+1
+      print("URL is wrong")
+   
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
     print(r.status_code)
@@ -34,3 +45,4 @@ if __name__ == "__main__":
 
     print("Sleeping until reset...")
     time.sleep(remaining_time)
+
