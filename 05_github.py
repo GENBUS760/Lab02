@@ -10,8 +10,13 @@ if __name__ == "__main__":
     r = requests.get(url_1)
     print(r.status_code)
     print(r.json())
+    url_1 = "https://api.github.com/Tournesol1008"
+    url_1 = url_1.rstrip()
+    print(r.status_code)
+    print(r.json())
     
     url_2 = "https://api.github.com/users/emaadmanzoor"
+    url_2 = "https://api.github.com/users/Tournesol1008"
     r = requests.get(url_2)
     print(r.status_code)
 
@@ -34,3 +39,5 @@ if __name__ == "__main__":
 
     print("Sleeping until reset...")
     time.sleep(remaining_time)
+    
+    
