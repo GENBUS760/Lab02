@@ -7,7 +7,22 @@ import time
 
 if __name__ == "__main__":
     url_1 = "https://api.github.com/emaadmanzoor"
-    r = requests.get(url_1)
+    attempts=0
+    while attempts<10:
+        r=requests.get(url_1)
+        if r.status_code==200:
+            print(r.status_code)
+            print(r.json())
+            break
+        attempts+=1
+        print('failed')
+        time.sleep(5)
+        if attempts==10:
+            print('error')
+            break
+
+ 
+'''    
     print(r.status_code)
     print(r.json())
     
@@ -34,3 +49,4 @@ if __name__ == "__main__":
 
     print("Sleeping until reset...")
     time.sleep(remaining_time)
+ '''
