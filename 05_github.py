@@ -11,6 +11,17 @@ if __name__ == "__main__":
     print(r.status_code)
     print(r.json())
     
+    r_new = int(r.status_code)
+    for i in rang(3):
+        if r_new = 404:
+            print("This is an invalid url; still have", 5-i, "attempts.")
+            time.sleep(2)
+            url_1 = "https://api.github.com/emaadmanzoor"
+            r = requests.get(url_1)
+            r_new = int(r.status_code)
+        if i == 3:
+            print("This is an invalid url.")
+            
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
     print(r.status_code)
