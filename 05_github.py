@@ -21,7 +21,7 @@ if __name__ == "__main__":
     
     try:
     	for key, value in r.json().items():
-        	print(key, value)
+    	print(key, value)
 
     	print(r.headers)
 
