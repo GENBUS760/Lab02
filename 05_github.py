@@ -7,9 +7,21 @@ import time
 
 if __name__ == "__main__":
     url_1 = "https://api.github.com/emaadmanzoor"
-    r = requests.get(url_1)
-    print(r.status_code)
-    print(r.json())
+    attempts = 0
+    while attempts < 10:
+        r = requests.get(url_1)
+        if r.status_code == 200:
+            print(r.status_code)
+            print(r.json())
+            break
+        attempts = attempts+1
+        print('fail')
+        time.sleep(5)
+        if attempts == 10:
+            print('error')
+            break
+            
+'''
     
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
@@ -31,6 +43,8 @@ if __name__ == "__main__":
     remaining_time = reset_time - current_time
     print("Remaining time (seconds)",
             remaining_time)
+    
 
     print("Sleeping until reset...")
     time.sleep(remaining_time)
+'''
