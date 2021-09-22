@@ -1,3 +1,4 @@
+'''
 import logging
 import boto3
 from botocore.exceptions import ClientError
@@ -15,12 +16,14 @@ def create_bucket(bucket_name, region=None):
 		logging.error(e)
 		return Flase
 	return True
+'''
+# The code above are from AWS official website.
 
-s3 = boto3.client('s3')
-response = s3.list_buckets()
+client = boto3.client(
+    's3',
+    aws_access_key_id = 'AKIA3QNTL6E2JRVAC6IH',
+    aws_secret_access_key = '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',
+    region_name = None
+)
 
-print('Existing buckets:')
-for bucket in response['Buckets']:
-    print(f'  {bucket["Name"]}')
-
-
+clientResponse = client.list_buckets()
