@@ -10,7 +10,14 @@ if __name__ == "__main__":
     r = requests.get(url_1)
     print(r.status_code)
     print(r.json())
-    
+    for i in range(5):
+        if int(r.status_code)==404:
+            print("Failed. Let's try it one more")
+            time.sleep(3)
+            r=requests.get(url_1)
+            if i==4 and int(r.status_code)==404:
+                print("invalid URL!!!")
+
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
     print(r.status_code)
