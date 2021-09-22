@@ -8,8 +8,10 @@ import time
 if __name__ == "__main__":
     url_1 = "https://api.github.com/emaadmanzoor"
     r = requests.get(url_1)
-    print(r.status_code)
-    print(r.json())
+    for x in range(1, r.status_code + 1):
+    	break
+    	print(r.status_code)
+    	print(r.json())
     
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
