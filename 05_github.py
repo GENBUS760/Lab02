@@ -11,6 +11,18 @@ if __name__ == "__main__":
     print(r.status_code)
     print(r.json())
     
+    for i in range(5):
+    	if r.status_code == 200: #status_code type is int, i checked
+    		print ("Request Successful!")
+    		break
+    	else:
+    		print ("Request Failure!")
+    		time.sleep(10)
+    		r = requests.get(url_1)
+    
+    if r.status_code != '200':
+    	print ('All attempts failed! Please try another url!')
+    
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
     print(r.status_code)
