@@ -6,10 +6,21 @@ import argparse # to parse command-line arguments
 import time
 
 if __name__ == "__main__":
+
+
     url_1 = "https://api.github.com/emaadmanzoor"
     r = requests.get(url_1)
     print(r.status_code)
-    print(r.json())
+    counter = 0
+    while r.status_code != 200:
+        time.sleep(1)
+        r = requests.get(url_1)
+        print(r.status_code)
+        print(r.json())
+        print("Retry attempt "+ str(counter) + " out of 5")
+        counter = counter + 1
+        if counter > 5:
+            break
     
     url_2 = "https://api.github.com/users/emaadmanzoor"
     r = requests.get(url_2)
